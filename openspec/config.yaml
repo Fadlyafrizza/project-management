@@ -1,0 +1,80 @@
+schema: spec-driven
+
+# Project context
+context: |
+  # Project: Project Management Tool (Kanban Board)
+
+  ## Tech Stack
+  - **Framework**: Next.js 16 (App Router, monolith architecture)
+  - **Language**: TypeScript 5 (strict mode)
+  - **UI Library**: React 19
+  - **Styling**: Tailwind CSS v4 (using @import "tailwindcss" + @theme inline)
+  - **UI Components**: shadcn/ui (Radix UI primitives + Tailwind)
+  - **Fonts**: Geist Sans & Geist Mono (via next/font/google)
+  - **Linting**: ESLint 9 with eslint-config-next
+  - **Build Tool**: Next.js built-in (Turbopack for dev)
+
+  ## Architecture & Conventions
+  - Monolith architecture — all frontend, API, and logic live in a single Next.js app
+  - App Router (`app/` directory) with file-based routing
+  - Path alias: `@/*` maps to project root
+  - Server Components by default; use `"use client"` only when needed (interactivity, hooks, browser APIs)
+  - API routes via Route Handlers (`app/api/*/route.ts`)
+  - Colocate components near their usage; shared components in `components/`
+  - Use shadcn/ui components — install via `npx shadcn@latest add <component>`
+  - Prefer composition over inheritance for component design
+  - Use TypeScript interfaces over types for object shapes; export from dedicated `types/` or colocated files
+
+  ## Naming Conventions
+  - Files & folders: kebab-case (e.g., `task-card.tsx`, `kanban-board/`)
+  - Components: PascalCase (e.g., `TaskCard`, `KanbanBoard`)
+  - Functions & variables: camelCase
+  - Constants: UPPER_SNAKE_CASE
+  - TypeScript interfaces/types: PascalCase with descriptive names (e.g., `Task`, `BoardColumn`)
+
+  ## Style Guide
+  - Tailwind CSS v4 with `@theme inline` for design tokens in `globals.css`
+  - Use CSS variables for theming (--background, --foreground, etc.)
+  - Support dark mode via `prefers-color-scheme` media query
+  - Use shadcn/ui theming conventions (CSS variables for colors)
+  - Responsive design: mobile-first approach
+  - Consistent spacing, typography, and color usage through Tailwind utilities
+  - Avoid inline styles; use Tailwind classes or CSS variables
+
+  ## Domain Knowledge
+  - **Domain**: Project/Task Management (Kanban methodology)
+  - **Core concept**: A Kanban board to help teams manage tasks visually
+  - **Board columns** (statuses):
+    1. **Backlog** — tasks identified but not yet planned
+    2. **Todo** — tasks planned and ready to be worked on
+    3. **In Progress** — tasks currently being worked on
+    4. **Done** — completed tasks
+  - **Key entities**:
+    - **Task**: the core unit of work (has title, description, status/column, priority, assignee, etc.)
+    - **Board**: the Kanban board containing all columns and tasks
+    - **Column/Status**: represents a stage in the workflow (Backlog → Todo → In Progress → Done)
+  - **Key interactions**:
+    - Drag and drop tasks between columns to update status
+    - Create, edit, and delete tasks
+    - Filter and search tasks
+    - Visual indicators for priority and assignment
+
+  ## Commit Conventions
+  - Use conventional commits: `feat:`, `fix:`, `chore:`, `docs:`, `refactor:`, `style:`, `test:`
+  - Write commit messages in English
+  - Keep commits atomic and focused
+
+# Per-artifact rules
+rules:
+  proposal:
+    - Keep proposals concise and focused on the problem and solution
+    - Include impact analysis for breaking changes
+    - Write in Bahasa Indonesia or English (follow the user's language)
+  tasks:
+    - Break tasks into small, implementable chunks (max 2 hours each)
+    - Each task should be independently testable
+    - Include acceptance criteria for each task
+  spec:
+    - Define clear interfaces and data types
+    - Document component props and API contracts
+    - Include edge cases and error handling requirements

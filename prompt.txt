@@ -1,0 +1,12 @@
+Prompt ----------------------- 1
+
+project ini adalah project-management-tools sederhana dengan fitur kanbanuntuk membantu  tim dalam manager task yang dibagi kedalam Backlog, Todo, in Progress, dan Done.
+
+Tech stack yang digunakan adalah next js dengan pendekatan monolotith dan tailwindcss v4 untuk style nya, dan shadcn untuk UI componentnya.
+
+Tolong bantu saya untuk update 
+
+config.yaml
+ isi dengan tech stack, conversations, style guides, dan domain knowledge
+
+Prompt ----------------------- 2
