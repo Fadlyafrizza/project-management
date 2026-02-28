@@ -64,16 +64,33 @@ context: |
   - Write commit messages in English
   - Keep commits atomic and focused
 
+  ## General
+    - Bahasa kode: English (variabel, fungsi, class, komentar, skema database, nama folder/file)
+    - Bahasa dokumentasi: Indonesian (boleh campur English untuk istilah teknis)
+
 # Per-artifact rules
 rules:
   proposal:
     - Keep proposals concise and focused on the problem and solution
     - Include impact analysis for breaking changes
     - Write in Bahasa Indonesia or English (follow the user's language)
+    - Write proposals in Indoensian, technical terms boleh English
   tasks:
     - Break tasks into small, implementable chunks (max 2 hours each)
     - Each task should be independently testable
     - Include acceptance criteria for each task
+    - |
+      Setiap task WAJIB diberi label kategori dengan prefix:
+        [BE]  - Backend (API, service, database, queue, AI/RAG)
+        [FE]  - Frontend (UI, compoenent, page, styling, client logic)
+        [DOCS]- Dokumentasi (README, API docs, guides)
+      Format penomoran: <group>, <urutan> [LABEL] <deskripsi task>
+      Contoh:
+        1.1 [BE] Membuat schema database untuk table users
+        1.2 [BE] Membuat API endpoint POST api/v1/auth/login
+        2.1 [FE] Membuat halaman login dengan form validation
+        2.2 [FE] Integrasi login page dengan API auth
+        3.1 [DOCS] Menulis dokumentasi API authentication
   spec:
     - Define clear interfaces and data types
     - Document component props and API contracts
