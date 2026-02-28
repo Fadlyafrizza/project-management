@@ -5,9 +5,9 @@ import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <div className="flex h-screen bg-slate-300 py-4 pr-4">
+    <div className="flex h-screen bg-mist-100 py-4 pr-4">
       <MainSidebar />
       <MainContent />
     </div>
   );
-} 
+}

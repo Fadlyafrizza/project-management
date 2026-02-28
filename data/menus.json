@@ -1,0 +1,39 @@
+{
+  "menu": [
+    {
+      "label": "Home",
+      "icon": "Home",
+      "href": "#"
+    },
+    {
+      "label": "Inbox",
+      "icon": "Inbox",
+      "href": "#"
+    },
+    {
+      "label": "Projects",
+      "icon": "Briefcase",
+      "href": "#"
+    },
+    {
+      "label": "Teamspaces",
+      "icon": "Users",
+      "href": "#"
+    },
+    {
+      "label": "Initiatives",
+      "icon": "Lightbulb",
+      "href": "#"
+    },
+    {
+      "label": "Dashboards",
+      "icon": "LayoutDashboard",
+      "href": "#"
+    },
+    {
+      "label": "More",
+      "icon": "Ellipsis",
+      "href": "#"
+    }
+  ]
+}
