@@ -23,7 +23,7 @@ function KanbanColumn({ id, items }: { id: string | number; items: any[] }) {
   };
 
   return (
-    <div className="kanban-column w-90" ref={ref}>
+    <div className="kanban-column w-full px-4" ref={ref}>
       <div className="kanban-column-header flex items-center justify-between">
         <div className="kanban-column-header-left flex items-center gap-2">
           <CircleDashed size={16} />
