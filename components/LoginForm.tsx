@@ -36,17 +36,10 @@ export default function LoginForm() {
                 password
             }
         }).then(res => {
-            console.log(res)
             localStorage.setItem("token", res.data.token)
-            // Middleware needs cookies since it can't read localStorage on the server
-            document.cookie = `token=${res.data.token}; path=/; max-age=604800`
             router.push('/')
         }).catch(err => {
-            console.log(err)
             setError(err.response.data.error)
-
-            console.dir(err)
-
         }).finally(() => {
             setLoading(false)
         })
@@ -100,7 +93,7 @@ export default function LoginForm() {
                     </Label>
                 </div>
 
-                <a href='#' className='hover:underline'>
+                <a onClick={() => router.push('/reset-password')} className='hover:underline cursor-pointer'>
                     Forgot Password?
                 </a>
             </div>
